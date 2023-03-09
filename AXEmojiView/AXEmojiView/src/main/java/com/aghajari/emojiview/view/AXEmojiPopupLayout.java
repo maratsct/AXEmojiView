@@ -52,21 +52,21 @@ public class AXEmojiPopupLayout extends FrameLayout implements AXPopupInterface 
     public AXEmojiPopupLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         Utils.forceLTR(this);
-        initKeyboardHeightProvider();
+        // initKeyboardHeightProvider();
     }
 
     public void initPopupView(AXEmojiBase content) {
-        if (keyboard == null) {
+       /* if (keyboard == null) {
             keyboard = new View(getContext());
             this.addView(keyboard,new FrameLayout.LayoutParams(-1,0));
-        }
+        }*/
         content.setPopupInterface(this);
         popupView = new AXEmojiPopupView(this, content);
         popupView.setFocusableInTouchMode(true);
         popupView.setFocusable(true);
         popupView.requestFocus();
 
-        initKeyboardHeightProvider();
+        //initKeyboardHeightProvider();
     }
 
     protected void initKeyboardHeightProvider() {
@@ -199,14 +199,6 @@ public class AXEmojiPopupLayout extends FrameLayout implements AXPopupInterface 
         return popupView!=null ? popupView.animationDuration : 250;
     }
 
-    public AXEmojiSearchView getSearchView() {
-        return popupView.getSearchView();
-    }
-
-    public void setSearchView(AXEmojiSearchView searchView) {
-        popupView.setSearchView(searchView);
-    }
-
     public void hideSearchView(){
         popupView.hideSearchView(true);
     }
@@ -271,7 +263,7 @@ public class AXEmojiPopupLayout extends FrameLayout implements AXPopupInterface 
             setWidth(0);
             setHeight(WindowManager.LayoutParams.MATCH_PARENT);
 
-            popupView.getViewTreeObserver().addOnGlobalLayoutListener(this::handleOnGlobalLayout);
+            //popupView.getViewTreeObserver().addOnGlobalLayoutListener(this::handleOnGlobalLayout);
         }
 
         /**

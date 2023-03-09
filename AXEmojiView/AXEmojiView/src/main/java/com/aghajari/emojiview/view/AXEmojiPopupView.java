@@ -37,10 +37,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
-import com.aghajari.emojiview.AXEmojiManager;
-import com.aghajari.emojiview.listener.PopupListener;
-import com.aghajari.emojiview.search.AXEmojiSearchView;
-import com.aghajari.emojiview.utils.Utils;
+import com.emojiview.emojiview.AXEmojiManager;
+import com.emojiview.emojiview.listener.PopupListener;
+import com.emojiview.emojiview.search.AXEmojiSearchView;
+import com.emojiview.emojiview.utils.Utils;
 
 import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.O;
@@ -80,7 +80,7 @@ public class AXEmojiPopupView extends FrameLayout implements AXPopupInterface {
         super(content.getContext());
         Utils.forceLTR(view);
         popupWindowHeight = Utils.getKeyboardHeight(content.getContext(), 0);
-        lp = new FrameLayout.LayoutParams(-1, popupWindowHeight);
+        lp = new FrameLayout.LayoutParams(-1, -1);
         lp.gravity = Gravity.BOTTOM;
 
         this.ap = view;
@@ -143,7 +143,7 @@ public class AXEmojiPopupView extends FrameLayout implements AXPopupInterface {
              }*/
             show();
 
-        //} else {
+            //} else {
             //disable anim
             //dismiss();
         }
@@ -525,7 +525,7 @@ public class AXEmojiPopupView extends FrameLayout implements AXPopupInterface {
                 super.onAnimationEnd(animation);
                 if (remove) {
                     try {
-                       removeSearchView(l);
+                        removeSearchView(l);
                     }catch (Exception ignore){}
                 }
             }

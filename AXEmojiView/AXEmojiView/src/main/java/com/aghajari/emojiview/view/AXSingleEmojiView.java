@@ -207,7 +207,6 @@ public class AXSingleEmojiView extends AXEmojiLayout implements FindVariantListe
         scrollListener2.setScrollSpeed(1L);
         scrollListener2.setChangeOnIDLEState(true);
         recyclerView.addOnScrollListener(scrollListener2);
-
     }
 
     public void setPageIndex(int index) {
